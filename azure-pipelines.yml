@@ -73,8 +73,9 @@ jobs:
     inputs:
       testResultsFormat: VSTest
       testResultsFiles: '**/*.trx' 
-  - task: PublishBuildArtifacts@1
+
+  - task: PublishPipelineArtifact@1
     inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      ArtifactName: 'test2'
-      publishLocation: 'Container'
+      targetPath: '$(Pipeline.Workspace)'
+      artifact: 'test'
+      publishLocation: 'pipeline'
