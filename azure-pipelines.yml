@@ -25,6 +25,12 @@ jobs:
     inputs:
       testResultsFormat: VSTest
       testResultsFiles: '**/*.trx' 
+      
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'test'
+      publishLocation: 'Container'
 
 - job: Windows
   pool:
