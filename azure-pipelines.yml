@@ -55,7 +55,7 @@ jobs:
 
 - job: LinuxRelease
   pool:
-    vmImage: 'Ubuntu 16.04'
+    vmImage: 'ubuntu-18.04'
   variables:
     buildConfiguration: 'Release'
   steps:
